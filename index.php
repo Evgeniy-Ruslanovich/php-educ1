@@ -39,17 +39,18 @@
     $a = (int)'05';
     $b = (string)1148.4;
     $c = (bool)-4;
-    echo 'string -> number -> string' . $a . '<br>';
-    echo 'number -> string' . $b . '<br>';
-    echo 'number -> bool -> string ->' . $c . '<br>';
+    echo 'string -> number -> string: ' . $a . '<br>';
+    echo 'number -> string: ' . $b . '<br>';
+    echo 'number -> bool -> string: ' . $c . '<hr>';
 ?>
 <?php
-     echo "<h1>Math ops</h1>";
-    $a = (int)'05';
-    $b = (string)1148.4;
-    $c = (bool)-4;
-    echo 'string -> number -> string' . $a . '<br>';
-    echo 'number -> string' . $b . '<br>';
-    echo 'number -> bool -> string ->' . $c . '<br>';
-    echo "<hr>"
+    echo "<h1>Math ops</h1>";
+    $a = 6;
+    $b = 4;
+    echo 'Сложение 6+4' . ($a + $b) . '<br>';
+    echo 'Вычитание 6-4=' . ($a - $b) . '<br>';
+    echo 'Умножение 6*4=' . $a * $b . '<br>';
+    echo 'Деление 6/4=' . $a / $b . '<br>';
+    echo 'Остаток от деления ост(6/4)=' . $a % $b . '<br>';
+    echo 'Возведение в степень 6^4=' . pow($a, $b) . '<hr>';
 ?>
