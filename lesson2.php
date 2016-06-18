@@ -118,5 +118,96 @@ echo "<h1> $Hello $userName!</h1> <h3>Добро пожаловать в наш 
         }
     }
 
-menuPeriod (&$dishName); //а теперь вызываем функцию, и получаем правильное название нашего меню
-echo $dishName;
+menuPeriod ($dishName); //а теперь вызываем функцию, и получаем правильное название нашего меню
+echo " <p>Вот что мы можем предложить Вам на <b>$dishName</b>:</p>";
+
+  //  function menuChoiсe ($dayPeriod, $vegan, $fishNoMeat, $meatNoFish, $meatAdnFish)
+/**
+ * Функция выбираети выводин на экран меню из 16 вариантов: ночное, утренее, обеденное и вечернее,
+ * и веган/рыба/мясо/мясо и рыба
+ */
+    function menuChoiсe ()
+    {
+        Global $dayPeriod;
+        Global $vegan;
+        Global $fishNoMeat;
+        Global $meatNoFish;
+        Global $meatAdnFish;
+        switch ($dayPeriod) {
+            case 1: //ночь
+                if ($vegan) {
+                    echo "Вегетарианец ночь";
+                } elseif ($fishNoMeat) {
+                    echo "рыба ночь";
+                } elseif ($meatNoFish) {
+                    echo "мясо без рыбы ночь";
+                } elseif ($meatAdnFish) {
+                    echo "мясорыбное меню ночь";
+                }
+                echo "<br>";
+                break;
+            case 2:  //завтрак
+                if ($vegan) {
+                    echo "веган завтрак";
+                } elseif ($fishNoMeat) {
+                    echo "морепродукты завтрак";
+                } elseif ($meatNoFish) {
+                    echo "мясное меню, без рыбы завтрак";
+                } elseif ($meatAdnFish) {
+                    echo "мясорыбное меню завтрак";
+                }
+                echo "<br>";
+                break;
+            case 3: //обед
+                if ($vegan) {
+                    echo "веганский обед";
+                } elseif ($fishNoMeat) {
+                    echo "рыбное меню обед";
+                } elseif ($meatNoFish) {
+                    echo "мясное меню, без рыбы обед";
+                } elseif ($meatAdnFish) {
+                    echo "мясорыбное меню обед";
+                }
+                echo "<br>";
+                break;
+            case 4:   //ужин
+                if ($vegan) {
+                    echo "Салат из репки, фасолевый пудинг, и смородиновый чай";
+                } elseif ($fishNoMeat) {
+                    echo "Салат из морепродуктов и Креветки по-буржуйски";
+                } elseif ($meatNoFish) {
+                    echo "мясное меню, без рыбы ужин";
+                } elseif ($meatAdnFish) {
+                    echo "мясорыбное меню ужин";
+                }
+                echo "<br>";
+                break;
+            default:
+                break;
+        }
+    }
+
+    menuChoiсe (); //вызываем функцию выбора меню
+    echo "<br><br>";
+    /**
+    * Теперь мы попробуем заменить кулинарные предпочтения. Пользователь будет вегетарианцем
+    */
+    echo "<p>Теперь пользователь выбрал вегетарианское меню </p> ";
+    $vegan = true; // тру означает, что чел вегетарианец
+    $fishNoMeat = false; //тру означает, что чел ест рыбу и морепродукты, но не есть мясо
+    $meatNoFish = false; //тру  - чел есть мясо, но не любит рыбу
+    $meatAdnFish = false; // ест и рыбу и мясо
+
+    echo " <p>Вот что мы можем предложить Вам на <b>$dishName</b>:</p>";
+    menuChoiсe (); //вызываем функцию выбора меню
+    echo "<br><br>";
+    /**
+     * Теперь Пользователь будет любителем морепродуктов:
+     */
+    echo "<p>Теперь пользователь выбрал меню с рыбой и морепродуктами</p> ";
+    $vegan = false; // тру означает, что чел вегетарианец
+    $fishNoMeat = true; //тру означает, что чел ест рыбу и морепродукты, но не есть мясо
+    $meatNoFish = false; //тру  - чел есть мясо, но не любит рыбу
+    $meatAdnFish = false; // ест и рыбу и мясо
+    echo " <p>Вот что мы можем предложить Вам на <b>$dishName</b>:</p>";
+    menuChoiсe (); //вызываем функцию выбора меню
