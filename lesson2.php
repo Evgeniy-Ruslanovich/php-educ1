@@ -197,10 +197,16 @@ echo "<h1> $Hello $userName!</h1> <h3>Добро пожаловать в наш 
      */
     echo "<hr> <h3>Займемся рекурсией</h3>";
     function numberRow ($n) {
-        if ($n >= 0) {
+        if ($n > 0) {
             echo "$n ";
             $n--;
             numberRow ($n);
+        } elseif ($n == 0){
+            echo "$n ";
+        } elseif ($n < 0) {
+            echo "$n ";
+            $n++;
+            numberRow ($n);
         }
     }
-numberRow(224);
+numberRow(256);
