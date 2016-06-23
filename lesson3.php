@@ -55,23 +55,24 @@
 
 <?php
 $page = $_GET['menu'];
-var_dump($_GET);
+//var_dump($_GET);
 echo "<br> $page";
- /**       switch ($dayPeriod) {
-            case 1:
-              $Hello = "Доброй ночи, ";
+     switch ($page) {
+            case 'vegan':
+                echo "<p> веган</p>";
                 break;
-            case 2:
-                $Hello = "Доброй утро, ";
+            case 'fish':
+                echo "<p> рыба</p>";
                 break;
-            case 3:
-                $Hello = "Добрый день, ";
+            case 'meat':
+                echo "<p> мясо</p>";
                 break;
-            case 4:
-                $Hello = "Добрый вечер, ";
+            case 'pizza':
+                echo "<p> пиццко</p>";
                 break;
             default:
-                break;*/
+                break;
+    }
     ?>
 
 
