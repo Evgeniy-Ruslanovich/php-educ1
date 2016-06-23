@@ -37,8 +37,11 @@
        'Горячее блюдо' =>'0',
     ];
     //надо добавить еще несколько пунктов и выводить с помощью цикла. Пицца там, паста,
-
+    //$arrL = 0;
+    //$arrL = count($hrefMenu);
+    //echo "$arrL";
 ?>
+
 <html>
     <head>
         <title>Харчелло Похаватти - итальянский ресторан</title>
@@ -49,9 +52,23 @@
         <h3>Лучшая кухня по лучшим ценам</h3>
         <div class="main">
         <p><b>Выберите меню:</b></p>
-        <p><a href="<?= $hrefMenu[0]['url'] ?>"> <?= $hrefMenu[0]['hrefText'] ?> </a></p>
+        <!-- <p><a href="<?= $hrefMenu[0]['url'] ?>"> <?= $hrefMenu[0]['hrefText'] ?> </a></p>
         <p><a href="<?= $hrefMenu[1]['url'] ?>"> <?= $hrefMenu[1]['hrefText'] ?> </a></p>
         <p><a href="<?= $hrefMenu[2]['url'] ?>"> <?= $hrefMenu[2]['hrefText'] ?> </a></p>
+            <br> -->
+
+<?php
+
+  /**  foreach ($hrefMenu as $key => $value) {
+        echo "<p><a href=' <?= [$key]['url'] ?> ' > <?= [$key]['hrefText'] ?> </a></p>";*/
+   
+    for ($i=0; $i < count($hrefMenu) ; $i++) {
+        ?>
+         <p><a href="<?= $hrefMenu[$i]['url'] ?>"> <?= $hrefMenu[$i]['hrefText'] ?> </a></p>
+        <?php
+    }
+?>  
+
 
 <?php
 $page = $_GET['menu'];
@@ -70,10 +87,13 @@ echo "<br> $page";
             case 'pizza':
                 echo "<p> пиццко</p>";
                 break;
+            case 'drinks':
+                echo "<p> напитки</p>";
+                break;
             default:
                 break;
     }
-    ?>
+ ?>
 
 
 
