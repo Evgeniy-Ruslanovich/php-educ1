@@ -2,35 +2,36 @@
     //include_once 'function3.php';
     $hrefMenu = [];
     $hrefMenu[0] = [
-       'url' => 'lesson3.php?menu=vegan',
+       'url' => 'vegan',
+        'getChek' => 'vegan',
        'hrefText' => 'Вегетарианское меню',
        'Салат' => '0',
        'Суп' =>'0',
        'Горячее блюдо' =>'0',
     ];
     $hrefMenu[1] = [
-       'url' => 'lesson3.php?menu=fish',
+       'url' => 'fish',
        'hrefText' => 'Рыба и морепродукты',
        'Салат' => '0',
        'Суп' =>'0',
        'Горячее блюдо' =>'0',
     ];
     $hrefMenu[2] = [
-       'url' => 'lesson3.php?menu=meat',
+       'url' => 'meat',
        'hrefText' => 'Мясное меню',
        'Салат' => '0',
        'Суп' =>'0',
        'Горячее блюдо' =>'0',
     ];
     $hrefMenu[3] = [
-       'url' => 'lesson3.php?menu=pizza',
+       'url' => 'pizza',
        'hrefText' => 'Пицца',
        'Салат' => '0',
        'Суп' =>'0',
        'Горячее блюдо' =>'0',
     ];
     $hrefMenu[4] = [
-       'url' => 'lesson3.php?menu=drinks',
+       'url' => 'drinks',
        'hrefText' => 'Напитки',
        'Салат' => '0',
        'Суп' =>'0',
@@ -59,13 +60,22 @@
 
 <?php
 
-  /**  foreach ($hrefMenu as $key => $value) {
+    /**  foreach ($hrefMenu as $key => $value) {
         echo "<p><a href=' <?= [$key]['url'] ?> ' > <?= [$key]['hrefText'] ?> </a></p>";*/
-   
+$page = $_GET['menu'];
     for ($i=0; $i < count($hrefMenu) ; $i++) {
-        ?>
-         <p><a href="<?= $hrefMenu[$i]['url'] ?>"> <?= $hrefMenu[$i]['hrefText'] ?> </a></p>
-        <?php
+        $page1 =  ${hrefMenu}[$i]['ulr'] ;
+        echo "$page1 <br>";
+        if ( in_array($_GET['menu'], $hrefMenu) ) {
+          echo "fuck you <br>" ;
+        }
+        else {
+           // echo "$page1 <br>";
+           // echo "$page <br>";
+            ?>
+            <p><a href="lesson3.php?menu=<?= $hrefMenu[$i]['url'] ?>"> <?= $hrefMenu[$i]['hrefText'] ?> </a></p>
+            <?php
+        }
     }
 ?>  
 
