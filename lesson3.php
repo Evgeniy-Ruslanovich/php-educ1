@@ -60,15 +60,22 @@
 
 <?php
 
-    /**  foreach ($hrefMenu as $key => $value) {
-        echo "<p><a href=' <?= [$key]['url'] ?> ' > <?= [$key]['hrefText'] ?> </a></p>";*/
-$page = $_GET['menu'];
-    for ($i=0; $i < count($hrefMenu) ; $i++) {
-        $page1 =  ${hrefMenu}[$i]['ulr'] ;
+    /**  цикл выводит ссылки из массива*/
+	$page = $_GET['menu'];
+    for ($i = 0; $i < count($hrefMenu) ; $i++) {
+        $page1 =  ${hrefMenu}[$i]['ulr'] ;  //ВОТ ТО МЕСТО, ГДЕ НЕ ПОЛУЧАЕТСЯ ВЫВЕСТИ СЗАЧЕНИЕ ЯЧЕЙКИ, СООТВЕТСТВЕННО НЕ ПОЛУЧАЕТСЯ СРАВНИТЬ ЕЕ С ЧЕМ-ТО
         echo "$page1 <br>";
-        if ( in_array($_GET['menu'], $hrefMenu) ) {
-          echo "fuck you <br>" ;
+        if ( in_array($_GET['menu'], $hrefMenu) ) { //если есть такое значение в массиве, то некликабельна
+          echo "not clickable<br>" ;
         }
+
+        /*
+        *Другой вариант, тоже не работает:
+                if ( $_GET['menu'] == $hrefMenu[$i]['url'] ) { //если есть такое значение в массиве, то некликабельна
+          echo "not clickable<br>" ;
+        }
+        */
+
         else {
            // echo "$page1 <br>";
            // echo "$page <br>";
