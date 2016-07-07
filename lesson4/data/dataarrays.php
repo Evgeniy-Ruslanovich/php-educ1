@@ -214,7 +214,7 @@ function taskDetalaized ($item) {
     echo "<br>";
 }
 
-taskDetalaized ($tasks[1]);
+//taskDetalaized ($tasks[1]);
 
 
 
