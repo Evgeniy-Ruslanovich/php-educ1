@@ -16,16 +16,16 @@ $body = "
 <html lang='en'>
     <head>
         <meta charset='UTF-8'>
-        <link rel='stylesheet' type='text/css' href=' <?= STYLE_DIR ?> ' >
-        <title>
-            <?= TITLE ?>
-        </title>
+        <link rel='stylesheet' type='text/css' href=' " . STYLE_DIR . " ' >
+        <title>" .
+            TITLE .
+       " </title>
     </head>
     <body>
+         $header
+         $navmenu
+         
         <p>Привет медвед</p>
-        
-        <?=$header?>
-
     </body>
 </html>";
 

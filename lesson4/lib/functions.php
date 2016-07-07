@@ -7,3 +7,6 @@
  * ДЗ 4, файл функций
  */
 
+function renderPage () {
+    echo $body
+}
