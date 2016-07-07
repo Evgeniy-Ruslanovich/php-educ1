@@ -44,80 +44,100 @@ $categories = [
 
 $tasks = [
     "0" => [
-        "section" => "work",
+        "category" => "work",
         "descript" => 'Нет такой задачи',
     ],
     "1" => [
-        "section" => "work",
-        "descript" => 'Товар 1',
+        "name" => "Проверить проекторы",
+        "category" => "work",
+        "descript" => 'Пройтись по всем аудиторяим, проверить фильтры проекторов и почистить учетки',
     ],
     "2" => [
-        "section" => "work",
+        "category" => "work",
         "descript" => 'Товар 2',
     ],
     "3" => [
-        "section" => "private",
+        "category" => "private",
         "descript" => 'Товар 3',
     ],
     "4" => [
 
-        "section" => "private",
+        "category" => "private",
         "descript" => 'Товар 4',
     ],
     "7" => [
-        "section" => "family",
+        "category" => "family",
         "descript" => 'Товар 7',
     ],
     "8" => [
-        "section" => "family",
+        "category" => "family",
         "descript" => 'Товар 8',
     ],
     "9" => [
-        "section" => "family",
+        "category" => "family",
         "descript" => 'Товар 9',
     ],
     "12" => [
-        "section" => "family",
+        "category" => "family",
         "descript" => 'Товар 12',
     ],
     "15" => [
-        "section" => "education",
+        "category" => "education",
         "descript" => 'Товар 15',
     ],
     "16" => [
-        "section" => "education",
+        "category" => "education",
         "descript" => 'Товар 16',
     ],
     "21" => [
-        "section" => "health",
+        "category" => "health",
         "descript" => 'Товар 21',
     ],
     "24" => [
-        "section" => "health",
+        "category" => "health",
         "descript" => 'Товар 24',
     ],
     "37" => [
-        "section" => "health",
+        "category" => "health",
         "descript" => 'Товар 37',
     ],
     "54" => [
-        "section" => "rest",
+        "category" => "rest",
         "descript" => 'Товар 54',
     ],
     "59" => [
-        "section" => "rest",
+        "category" => "rest",
         "descript" => 'Товар 59',
     ],
     "76" => [
-        "section" => "home",
+        "category" => "home",
         "descript" => 'Товар 76',
     ],
     "123" => [
-        "section" => "home",
+        "category" => "home",
         "descript" => 'Товар 123',
     ],
     "145" => [
-        "section" => "home",
+        "category" => "home",
         "descript" => 'Товар 145',
     ],
 ];
+
+$testarr = [1,2,3];
+echo $testarr[0];
+echo $testarr[1];
+echo $testarr[2];
+echo $tasks[0][descript];
+
+function writeTask($item) {
+    ?>
+    <div class="taskDiv">
+        <p> <b> <?= $item[name] ?> </b> </p>
+
+        <p> <?= $item[descript] ?></p>
+        <br>
+    </div>
+<?php
+}
+
+writeTask($tasks[1]);
