@@ -51,6 +51,7 @@ $tasks = [
         "name" => "Проверить проекторы",
         "category" => "work",
         "descript" => 'Пройтись по всем аудиторяим, проверить фильтры проекторов и почистить учетки',
+        "details" => "блафывало фывадлодофав ячьсмтджцут смячмтдуцтмчса фывалутвыма ыфавфывафыва фывфывафыва фывфывафаыв фывафывав фывафывааыв фывфываыф фывафвыафыва фывафыва "
     ],
     "2" => [
         "name" => "Название задачи",
@@ -161,7 +162,7 @@ function writeTask($item)
         <p><b> <?= $item[name] ?> </b></p>
 
         <p> <?= $item[descript] ?></p>
-        <br>
+
     </div>
     <?php
 }
@@ -177,12 +178,12 @@ function writeTaskCat($item)
         <p><b> <?= $item[name] ?> </b> Категория: <?= $item[category] ?> </p>
 
         <p> <?= $item[descript] ?></p>
-        <br>
+
     </div>
     <?php
 }
 
-writeTask($tasks[1]);
+//writeTask($tasks[1]); пробный вызов функции
 
 /**
  * @param $arr
@@ -198,11 +199,25 @@ function allTasks($arr)
 
 
 function tasksByCat ($arr, $category) {
-    foreach ($arr as $value) {
-        if ($value[category] == "$category") {
-            writeTaskCat($value);
+    echo "<p>Все дела категории $category:</p>";
+    foreach ( $arr as $value ) {
+        if ( $value[category] == "$category" ) {
+            writeTask($value);
         }
     }
 }
-tasksByCat($tasks, "rest");
+//tasksByCat($tasks, "rest"); пробный вывоз функции
+
+function taskDetalaized ($item) {
+    writeTaskCat($item);
+    echo "<p><b>Детальное описание задачи:</b></p>" . $item[details];
+    echo "<br>";
+}
+
+taskDetalaized ($tasks[1]);
+
+
+
+
+
 
