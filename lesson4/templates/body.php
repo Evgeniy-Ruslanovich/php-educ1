@@ -11,27 +11,13 @@
 //include_once (TEMPLATE_DIR. DIRECTORY_SEPARATOR . "header.php");
 
 //$body = "
+require_once(TEMPLATE_DIR . DIRECTORY_SEPARATOR .'dataarrays.php');
+$header = TEMPLATE_DIR . DIRECTORY_SEPARATOR . "header.php";
+$navmenu = TEMPLATE_DIR . DIRECTORY_SEPARATOR . "navMenu.php";
+$footer = TEMPLATE_DIR . DIRECTORY_SEPARATOR . "footer.php";
+$tasks = TEMPLATE_DIR . DIRECTORY_SEPARATOR . "tasks.php";
 
-$header = "header.php";
-/**
-function renderChunk ($file, $parameters) {
-    if (!is_file($file)) {
-        echo 'Template file "' . $file . '" not found ';
-        exit(ERROR_NOT_FOUND);
-    }
 
-    if (filesize($file) === 0) {
-        echo 'Template file "' . $file . '" is empty ';
-        exit(ERROR_TEMPLATE_EMPTY);
-    }
-    ob_start();
-    if ($parameters != null) {
-        extract($parameters);
-    }
-    include $file;
-    echo ob_get_clean();
-}
-*/
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -44,14 +30,15 @@ function renderChunk ($file, $parameters) {
     </head>
     <body>
         <?php 
-            renderChunk($header , null);
-    //        renderChunk($navmenu , null);
-     //       renderChunk($tasks , $taskParams);
-     //       renderChunk($footer , null);
+          renderChunk($header , null);
+         renderChunk($navmenu , null);
+        renderChunk($tasks , $param=[taskCategory => $_GET['cat'], taskId => $_GET['id']]);
+//renderChunk($tasks , $param=[taskCategory => work]);
+         renderChunk($footer , null);
 ?>
          
          
-        <p>Привет медвед</p>
+
     </body>
 </html>
 
