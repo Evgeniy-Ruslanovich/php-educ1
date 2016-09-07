@@ -63,10 +63,12 @@
     /**  цикл выводит ссылки из массива*/
 	$page = $_GET['menu'];
     for ($i = 0; $i < count($hrefMenu) ; $i++) {
-        $page1 =  ${hrefMenu}[$i]['ulr'] ;  //ВОТ ТО МЕСТО, ГДЕ НЕ ПОЛУЧАЕТСЯ ВЫВЕСТИ СЗАЧЕНИЕ ЯЧЕЙКИ, СООТВЕТСТВЕННО НЕ ПОЛУЧАЕТСЯ СРАВНИТЬ ЕЕ С ЧЕМ-ТО
+        $page1 =  $hrefMenu[$i]['ulr'] ;
         echo "$page1 <br>";
-        if ( in_array($_GET['menu'], $hrefMenu) ) { //если есть такое значение в массиве, то некликабельна
-          echo "not clickable<br>" ;
+        if ( isset($_GET['menu']) && $hrefMenu[$i]['url'] == $_GET['menu'] ) { //если есть такое значение в массиве, то некликабельна
+            ?>
+            <p> <?= $hrefMenu[$i]['hrefText'] ?> </p>
+            <?php
         }
 
         /*
